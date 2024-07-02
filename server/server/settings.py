@@ -7,8 +7,6 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = True
@@ -63,6 +61,8 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 WSGI_APPLICATION = "server.wsgi.application"
 
