@@ -5,6 +5,7 @@ import dj_database_url
 
 load_dotenv()
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -58,10 +59,14 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": os.environ.get("DB_NAME", "geoip_server"),
+        "NAME": os.environ.get(
+            "DB_NAME",
+        ),
         "USER": os.environ.get("DB_USER"),
         "PASSWORD": os.environ.get("DB_PASSWORD"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
+        "HOST": os.environ.get(
+            "DB_HOST",
+        ),
         "PORT": os.environ.get("DB_PORT", "3306"),
     }
 }
@@ -100,3 +105,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 GEOIP_PATH = os.path.join(BASE_DIR, "geoip")
+
+my_var = os.getenv("MY_VARIABLE")
