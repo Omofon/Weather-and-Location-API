@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "manage.py",
+      "use": "@vercel/python",
+      "config": {
+        "serverless": true
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/manage.py"
+    }
+  ]
+}
