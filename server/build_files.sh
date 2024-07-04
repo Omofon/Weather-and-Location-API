@@ -1,13 +1,10 @@
-#!/bin/bash
+# Build the project
+echo "Building the project..."
+python3.12 -m pip install -r requirements.txt
 
-# Upgrade pip to the latest version
-python3.9 -m pip install --upgrade pip
+echo "Make Migration..."
+python3.12 manage.py makemigrations --noinput
+python3.12 manage.py migrate --noinput
 
-# Install dependencies
-python3.9 -m pip install -r requirements.txt
-
-# Apply database migrations
-python3.9 manage.py migrate --noinput
-
-# Collect static files (if you had any)
-python3.9 manage.py collectstatic --noinput
+echo "Collect Static..."
+python3.12 manage.py collectstatic --noinput --clear

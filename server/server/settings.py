@@ -8,7 +8,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "o@d6i*=c^5j_g76yrm9g(u025n@nti_q#$wc!20wz1)e+q99o2"
 
 DEBUG = True
 
@@ -63,7 +63,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 WSGI_APPLICATION = "server.wsgi.application"
 
@@ -91,11 +91,11 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 GEOIP_PATH = os.path.join(BASE_DIR, "geoip")
 
-my_var = os.getenv("MY_VARIABLE")
+# my_var = os.getenv("MY_VARIABLE")
